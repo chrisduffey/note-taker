@@ -22,10 +22,10 @@ router.post('/api/notes', (req, res)=>{
     
 });
 
-router.delete('/api/notes/:id', (req, res)=> {
-    let data = JSON.parse(fs.readFileSync('db/db.json', "utf-8"))
+// router.delete('/api/notes/:id', (req, res)=> {
+//     let data = JSON.parse(fs.readFileSync('db/db.json', "utf-8"))
     
-})
+// })
 
 module.exports = router;
 
