@@ -23,11 +23,11 @@
   ## Use
   Watch my video below for demo.
 
-   Google link to video application:
-  * https://drive.google.com/file/d/1btNBkd1opuEvygWCTBRKfF3_g_K1IVGY/view
+  * Google link to video application:
+   https://drive.google.com/file/d/1btNBkd1opuEvygWCTBRKfF3_g_K1IVGY/view
 
   * Repository link:
-  * https://github.com/chrisduffey/note-taker
+    https://github.com/chrisduffey/note-taker
 
   ## License
 This project is licensened under the MIT license.
