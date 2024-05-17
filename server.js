@@ -1,8 +1,8 @@
 const express = require('express');
-
 const uuid = require("uuid");
 const PORT = process.env.PORT ||3001;
 const app = express();
+const router = express.Router();
 
 
 // Middleware to use
@@ -13,8 +13,9 @@ app.use(express.static("public"));
 // tells application to use the routes provided
 // app.use(api_route);
 // app.use(html_route);
-require('/routes/api.js')(app);
-require('/routes/html.js')(app);
+app.use("/",require('./routes/html'));
+app.use("/api", require('./routes/api'));
+
 
 
 app.listen(PORT, () =>

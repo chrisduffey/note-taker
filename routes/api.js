@@ -1,20 +1,21 @@
 const router = require('express').Router();
 const fs = require("fs");
 const path = require('path');
-const uuid = require('uuid');
+const {v4: uuidv4} = require('uuid');
 
-router.get('/api/notes', async (req, res)=>{
-    res.sendFile(path.join(__dirname, '../db/db.json'));
+router.get('/notes', async (req, res)=>{
+    let data = fs.readFileSync('db/db.json', "utf-8");
+    res.json(JSON.parse(data));
 });
 
 
-router.post('/api/notes', (req, res)=>{
+router.post('/notes', (req, res)=>{
     const db = JSON.parse (fs.readFileSync('db/db.json'));
     const newEntry = {
      // body for note
     title: req.body.title,
     text: req.body.text,
-    id: uuid(),
+    id: uuidv4(),
     };
     db.push(newEntry);
     fs.writeFileSync('db/db.json', JSON.stringify(db));
@@ -22,10 +23,15 @@ router.post('/api/notes', (req, res)=>{
     
 });
 
-// router.delete('/api/notes/:id', (req, res)=> {
-//     let data = JSON.parse(fs.readFileSync('db/db.json', "utf-8"))
-    
-// })
+router.delete('/notes/:id', (req, res)=> {
+    let data = fs.readFileSync('db/db.json', "utf-8");
+    const dataJSON = JSON.parse(data);
+    const newNotes = dataJSON.filter((note) =>{
+        return note.id !== req.params.id;
+    });
+    fs.writeFileSync("db/db.json", JSON.stringify(newNotes))
+    res.json("Deleted Note!");
+});
 
 module.exports = router;
 
