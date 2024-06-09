@@ -23,8 +23,8 @@
   ## Use
   Watch my video below for demo.
 
-  * Google link to video application:
-   https://drive.google.com/file/d/1btNBkd1opuEvygWCTBRKfF3_g_K1IVGY/view
+  * Link to video application:
+   https://watch.screencastify.com/v/Ht4p7JJAqFz0uFG2YXfw
 
   * Repository link:
     https://github.com/chrisduffey/note-taker

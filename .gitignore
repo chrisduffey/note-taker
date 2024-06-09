@@ -1,8 +1,2 @@
-*.ss~
-*.ss#*
-.#*.ss
 
-*.scm~
-*.scm#*
-.#*.scm
 node_modules
